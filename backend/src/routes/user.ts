@@ -29,7 +29,10 @@ userRouter.post("/signup", async (c) => {
       },
     });
 
-    const jwt = await sign({ id: user.id }, "secret");
+    const jwt = await sign(
+      { email: user.email, password: user.password , id : user.id },
+      "secret"
+    );
     return c.json({ jwt });
   } catch (e: any) {
     console.log("error ---------------");
@@ -54,7 +57,14 @@ userRouter.post("/signin", async (c) => {
     return c.json({ error: "user not found" });
   }
 
-  const jwt = await sign({ id: user.id }, "secret");
+  const jwt = await sign(
+    {
+      email: user.email,
+      password: user.password,
+      id: user.id
+    },
+    "secret"
+  );
   return c.json({ jwt });
 });
 

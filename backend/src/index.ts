@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import { cors } from "hono/cors";
 
 import userRouter from "./routes/user";
 import blogRouter from "./routes/blog";
@@ -11,6 +12,8 @@ const app = new Hono<{
     userId: string;
   };
 }>();
+
+app.use("/*", cors());
 
 app.get("/", async (c) => {
   return c.json({ message: "Hello World" });

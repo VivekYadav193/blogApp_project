@@ -10,9 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
     "@tailwindcss/vite": "^4.0.0-alpha.15",
+    "@types/node": "^20.12.11",
+    "@vivek0913/common": "^1.0.0",
+    "axios": "^1.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.1",
     "tailwindcss": "^4.0.0-alpha.15"
   },
   "devDependencies": {

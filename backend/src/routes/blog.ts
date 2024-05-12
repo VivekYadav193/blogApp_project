@@ -13,7 +13,10 @@ const blogRouter = new Hono<{
 }>();
 
 blogRouter.use("/*", async (c, next) => {
+  console.log("reached blog mw");
   const authHeader = c.req.header("authorization");
+  console.log(authHeader)
+
   const user = await verify(authHeader || "", "secret");
 
   if (user) {
